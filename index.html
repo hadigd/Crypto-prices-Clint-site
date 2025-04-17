@@ -23,7 +23,7 @@
 
     h1 {
       margin-bottom: 30px;
-      font-size: 32px;
+      font-size: 60px;
       text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
     }
 
@@ -78,13 +78,31 @@
 
     #updatedTime {
       margin-top: 30px;
-      font-size: 40px;
+      font-size: 18px;
       color: #ccc;
+    }
+
+    footer {
+      margin-top: 50px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+      color: #ccc;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+    }
+
+    footer a {
+      color: #4ef04e;
+      text-decoration: none;
+      font-weight: bold;
     }
 
     @media(max-width: 600px) {
       .coin {
-        width: 90%;
+        width: 95%;
       }
     }
   </style>
@@ -96,26 +114,10 @@
   <div class="container" id="coinsContainer"></div>
 
   <div id="updatedTime">Last updated: Loading...</div>
-  <footer style="
-    margin-top: 40px;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 20px;
-    text-align: center;
-    font-size: 35px;
-    color: #ccc;
-    backdrop-filter: blur(6px);
-    box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
-  ">
+
+  <footer>
     Developed by 
-    <a 
-      href="https://hadigd.github.io/Portfolio/GD.html#about" 
-      target="_blank" 
-      style="color: #4ef04e; text-decoration: none; font-weight: bold;"
-    >
-      XyberNova
-    </a>
-    <br/>
+    <a href="https://hadigd.github.io/Portfolio/GD.html#about" target="_blank">XyberNova</a><br>
     &copy; 2025 | All rights reserved
   </footer>
 
@@ -131,13 +133,14 @@
       { symbol: "DOTUSDT", name: "Polkadot (DOT)" },
       { symbol: "MATICUSDT", name: "Polygon (MATIC)" },
       { symbol: "AVAXUSDT", name: "Avalanche (AVAX)" },
-      { symbol: "SHIBUSDT", name: "Shiba Inu (SHIB)" }
+      { symbol: "SHIBUSDT", name: "Shiba Inu (SHIB)" },
+      { symbol: "ENAUSDT", name: "Ethena (ENA)" } // New Coin
     ];
 
     const prices = {};
     const container = document.getElementById("coinsContainer");
 
-    // Create cards
+    // Create coin cards
     symbols.forEach(coin => {
       const div = document.createElement("div");
       div.className = "coin";
